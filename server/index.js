@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 // eslint-disable-next-line no-undef
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
