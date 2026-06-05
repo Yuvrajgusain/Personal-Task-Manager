@@ -1,5 +1,4 @@
-const BASE = 'https://taskmanagerbackend-zjdt.onrender.com/api';
-
+const BASE = 'https://personal-task-manager-qtnx.onrender.com/api';
 async function request(path, options = {}) {
     const res = await fetch(`${BASE}${path}`, {
         headers: { 'Content-Type': 'application/json' },
