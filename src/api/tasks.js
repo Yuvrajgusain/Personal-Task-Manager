@@ -1,4 +1,4 @@
-const BASE = 'http://localhost:3001/api';
+const BASE = 'https://taskmanagerbackend-zjdt.onrender.com/api';
 
 async function request(path, options = {}) {
     const res = await fetch(`${BASE}${path}`, {
