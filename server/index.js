@@ -4,11 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 // eslint-disable-next-line no-undef
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-// In-memory storage
 let tasks = [
   {
     id: uuidv4(),
@@ -36,7 +35,7 @@ let tasks = [
   },
 ];
 
-// GET /api/tasks - get all tasks
+//get all tasks
 app.get('/api/tasks', (req, res) => {
   const sorted = [...tasks].sort(
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
@@ -44,7 +43,7 @@ app.get('/api/tasks', (req, res) => {
   res.json({ success: true, data: sorted });
 });
 
-// POST /api/tasks - create a task
+//create a task
 app.post('/api/tasks', (req, res) => {
   const { title, description, dueDate } = req.body;
 
@@ -65,7 +64,7 @@ app.post('/api/tasks', (req, res) => {
   res.status(201).json({ success: true, data: task });
 });
 
-// PATCH /api/tasks/:id - update a task
+//update a task
 app.patch('/api/tasks/:id', (req, res) => {
   const { id } = req.params;
   const index = tasks.findIndex((t) => t.id === id);
@@ -89,7 +88,7 @@ app.patch('/api/tasks/:id', (req, res) => {
   res.json({ success: true, data: tasks[index] });
 });
 
-// DELETE /api/tasks/:id - delete a task
+//delete a task
 app.delete('/api/tasks/:id', (req, res) => {
   const { id } = req.params;
   const index = tasks.findIndex((t) => t.id === id);

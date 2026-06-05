@@ -1,4 +1,4 @@
-const BASE = 'https://personal-task-manager-qtnx.onrender.com/api';
+const BASE = 'http://localhost:3001/api';
 
 async function request(path, options = {}) {
     const res = await fetch(`${BASE}${path}`, {
