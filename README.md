@@ -138,15 +138,6 @@ Deployed on Vercel
 
 Deployed on Render
 
-## Future Improvements
-
-* Persistent database storage (MongoDB/PostgreSQL)
-* User authentication and authorization
-* Task categories and priorities
-* Due date notifications
-* Dark/Light theme toggle
-* User accounts and cloud synchronization
-
 ## Author
 
 **Yuvraj Gusain**
