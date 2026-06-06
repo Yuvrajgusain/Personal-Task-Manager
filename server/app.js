@@ -7,32 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-let tasks = [
-    {
-        id: uuidv4(),
-        title: 'Read project documentation',
-        description: 'Go through the full stack assessment brief carefully',
-        dueDate: new Date(Date.now() - 86400000).toISOString().split('T')[0],
-        completed: false,
-        createdAt: new Date(Date.now() - 172800000).toISOString(),
-    },
-    {
-        id: uuidv4(),
-        title: 'Set up development environment',
-        description: 'Install Node.js, Vite, and dependencies',
-        dueDate: new Date().toISOString().split('T')[0],
-        completed: true,
-        createdAt: new Date(Date.now() - 86400000).toISOString(),
-    },
-    {
-        id: uuidv4(),
-        title: 'Build the task manager app',
-        description: 'Create a full-stack personal task manager with React + Express',
-        dueDate: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
-        completed: false,
-        createdAt: new Date().toISOString(),
-    },
-];
+let tasks = [];
 
 app.get('/api/tasks', (req, res) => {
     const sorted = [...tasks].sort(
